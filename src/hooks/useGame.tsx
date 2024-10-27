@@ -23,6 +23,7 @@ const useGame = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
   const fetchGames = async (controller: AbortController) => {
     try {
       setIsLoading(true);
@@ -37,6 +38,7 @@ const useGame = () => {
       setIsLoading(false);
     }
   };
+
   useEffect(() => {
     const controller = new AbortController();
     fetchGames(controller);
